@@ -36,8 +36,8 @@ async function initfunc()
      
 Telegram.WebApp.ready(); 
       await lditemsdebug();   
-      //Telegram.WebApp.themeParams.text_color= '#2e2e2e';
-      window.Telegram.WebApp.setHeaderColor('#2e2e2e');
+      window.Telegram.WebApp.themeParams.text_color= '#9e9e9e';
+      window.Telegram.WebApp.setHeaderColor('#1e1e1e');
       //Telegram.WebApp.setBottomBarColor('#2e2e2e');
       //Telegram.WebApp.setBackgroundColor('#2e2e2e');
           

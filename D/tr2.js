@@ -358,7 +358,7 @@ function closeOptions(){ appotions.style.display='none';}
  async function getdt()
 {
           
-var weekdt = new Date("14/April/2025 20:30:00");
+var weekdt = new Date("1/August/2025 20:30:00");
 var now = new Date();
           
  if(weekdt.getTime()>now.getTime() || now.getTime()- weekdt.getTime()> 2580000000){ showAlert("Your phone date is not correct. Set it and try again. The app will close automatically."); close(); return;}

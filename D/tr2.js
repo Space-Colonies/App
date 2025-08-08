@@ -225,6 +225,18 @@ function Showyt(e)
     ppp.style.display= "flex";       
   
 }
+
+function ShowX(e)
+{
+     TaskToHandle= 7;TaskId=e.id;
+    msg="Watch a Youtube video to earn 100 $Spacecoins.";
+    document.getElementById('bt1').innerHTML ='Watch video now';
+    document.getElementById('bt2').innerHTML ='May be later';          
+    document.getElementById('pop').innerHTML =msg;          
+    ppp.style.height= '70%';     
+    ppp.style.display= "flex";       
+  
+}
  
 var link2open,closeapp=false;
 function openApp(browser)
@@ -314,7 +326,13 @@ function closeOptions(){ appotions.style.display='none';}
          savedebug();
             let st="https://space-colonies.github.io/d/?action=ytvidd_"+ str;// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
            link2open=st; closeapp=true;
+          } 
+            else if(TaskToHandle==8)
+          {
+            let st="https://x.com/spacetrain2024";
+           link2open=st; closeapp=false;
           }   
+            
           else
           { 
                     showAlert('Task is empty '+TaskToHandle);
@@ -629,7 +647,7 @@ function showAlert(message) {
   tsk('C','TG Channel','Subscribe to Telegram channel to earn 100 $Spacecoins','Showtc');
   tsk('R','Reward claiming','Claim your mobile ads reward ','ShowAd');
   tsk('Y','YouTube Vids','Earn 100 $Spacecoins per YT video watched','Showyt');
-  tsk('X','Follow on X','Earn 100 $Spacecoins for  following me on X','vsharein4');
+  tsk('X','Follow on X','Earn 100 $Spacecoins for  following me on X','ShowX');
   //tsk('X','Follow on X','Earn 500,000 $Spacecoins for video share','vsharein4');
   
 }

@@ -228,9 +228,9 @@ function Showyt(e)
 
 function ShowX(e)
 {
-     TaskToHandle= 7;TaskId=e.id;
-    msg="Watch a Youtube video to earn 100 $Spacecoins.";
-    document.getElementById('bt1').innerHTML ='Watch video now';
+     TaskToHandle= 8;TaskId=e.id;
+    msg="Follow me on X to earn 100 $Spacecoins.";
+    document.getElementById('bt1').innerHTML ='Follow now';
     document.getElementById('bt2').innerHTML ='May be later';          
     document.getElementById('pop').innerHTML =msg;          
     ppp.style.height= '70%';     

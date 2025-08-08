@@ -375,7 +375,7 @@ let m = d.getMinutes() * 60;
  //sec = d.getSeconds() + h  + m; 
       startValue =  d.getSeconds() + h  + m;   
           var diff = now.getTime() - uu.activedt.getTime();
-    uu.autofarm= (Math.floor((diff )/ (1000)) - startValue)/1000;
+    uu.autofarm= Math.floor((((diff )/ (1000)) - startValue)/1000);
   if(uu.autofarm<0)uu.autofarm=0;
  startValue=startValue/1000;
 }       

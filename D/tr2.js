@@ -40,7 +40,7 @@ Telegram.WebApp.ready();
       window.Telegram.WebApp.setHeaderColor('#1e1e1e');
       await lditemsdebug(); 
       //Telegram.WebApp.setBottomBarColor('#2e2e2e');
-      Telegram.WebApp.setBackgroundColor('#9e9e9e');
+      //Telegram.WebApp.setBackgroundColor('#9e9e9e');
           
      Telegram.WebApp.disableVerticalSwipes(); 
      //initData= Telegram.WebApp.initData;    
@@ -151,12 +151,6 @@ function pageld(e){
           ppp.style.height= height;
           ppp.style.display= "flex";            
 }
-
-   
-
-
-
-
 
 function showinvite(e)
 {
@@ -294,7 +288,7 @@ function closeOptions(){ appotions.style.display='none';}
               return;
           }   
   else if(TaskToHandle==4)
-          { if(!uu.others.includes('grp')){uu.others=uu.others+ 'grp'; uu.TaskCoins +=1000;savedebug();}
+          { if(!uu.others.includes('grp')){uu.others=uu.others+ 'grp'; uu.TaskCoins +=100;savedebug();}
             
          Telegram.WebApp.openTelegramLink('https://t.me/spacecolonies');
               
@@ -311,7 +305,7 @@ function closeOptions(){ appotions.style.display='none';}
           }
     else if(TaskToHandle==6)
             { 
-              if(!uu.others.includes('chch')){ uu.others=uu.others+ 'chch'; uu.TaskCoins +=100000;savedebug();}
+              if(!uu.others.includes('chch')){ uu.others=uu.others+ 'chch'; uu.TaskCoins +=100;savedebug();}
              Telegram.WebApp.openTelegramLink('https://t.me/spacecoloniesc');
             
                
@@ -329,7 +323,8 @@ function closeOptions(){ appotions.style.display='none';}
            link2open=st; closeapp=true;
           } 
             else if(TaskToHandle==8)
-          {
+          {   if(!uu.others.includes('xcom')){ uu.others=uu.others+ 'xcom'; uu.TaskCoins +=100;savedebug();}
+             
             let st="https://x.com/spacetrain2024";
            link2open=st; closeapp=false;
           }   
@@ -454,11 +449,11 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                     Telegram.WebApp.CloudStorage.getItem("data2", await async function(err, value) {
                       let save=false;
                             if (err) {
-                                showAlert('Error reading from cloud: ' + err);
+                                showAlert('Error reading from cloud: ' + err);return;
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef=typeof NoRef !== "undefined" ? NoRef : false;if(NoRef){showAlert( "Sorry, you have to use a  referral link to join Colonies. Get it from fiends or search for Colonies channel and get a link from one of the pinned messages.");window.close(); }else showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef=typeof NoRef !== "undefined" ? NoRef : false; if(NoRef){window.location.href= 'https://space-colonies.github.io/f/';} else showAlert("Welcome! Join Colonies channel and group to secure your free ticket to the moon. Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
     uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
@@ -468,9 +463,9 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                               { 
                       if(uu[prop].toString().length >0){ }     
                       else if(prop.toString()=="TaskCoins"){ uu[prop]=0;}
-                      else if(prop.toString()=="refId"){ /*uu[prop]=getrefcode();*/}
-                      else if(prop.toString()=="ref"){/*uu[prop]="noref";*/}
-                      else if(prop.toString()=="ask1"){ /*uu[prop]="nil";*/}
+                      else if(prop.toString()=="refId"){ uu[prop]= '';/*getrefcode();*/}
+                      else if(prop.toString()=="ref"){uu[prop]="";}
+                      else if(prop.toString()=="ask1"){ uu[prop]="nil";}
                       else if(prop.toString()=="rwd"){ uu[prop]=0;}
                       else if(prop.toString()=="yts"){uu[prop]=0; }
                       else if(prop.toString()=="signUpdt"){ uu[prop]=new Date();}
@@ -513,8 +508,8 @@ async function getQuery(isref=false)
              //alert('awarded');
               Award(p2*100) ;
              if(p1.includes(  "ytvid"))showAlert("You've earned "+(p2*100)+ "$Spacecoins for watching a video. " );else showAlert("You've earned "+(p2*100)+ "$Spacecoins for watching ads." );
-              if(uu.yts<10 ){Award( 2000);
-                  uu.yts=2000; showAlert("Congratulations! You have been awarded 2,000 $Spacecoins for installing my app.");}            
+              if(uu.yts<10 ){Award( 10000);
+                  uu.yts=10000; showAlert("Congratulations! You have been awarded 10,000 $Spacecoins for installing mobile app.");}            
              
            } else  showAlert("To get rewarded for a task, you need to start it from the task section. ");                             
           }

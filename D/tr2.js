@@ -448,7 +448,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
   async function cloud(x){uu=u[0];savedebug();}
    //async function cloud(){ alert(await nameOf(()=>u[0].signUpdt) +'  '+  u1.signUpdt); }
   async function  lditemsdebug() {
-    if(Telegram.WebApp.initDataUnsafe.start_param.has("reference"))alert("ref"); else close();
+    let r=Telegram.WebApp.initDataUnsafe.start_param; if(r.includes("reference"))alert("ref"); else close();
             let res='';
                     Telegram.WebApp.CloudStorage.getItem("data", await async function(err, value) {
                       let save=false;

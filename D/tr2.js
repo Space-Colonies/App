@@ -456,7 +456,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);if(NoRef)return; showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);/*if(NoRef)return; */showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
     uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
@@ -542,7 +542,7 @@ async function getQuery(isref=false)
       }
   }
                                
-  }  else{if (isref){ showAlert("Sorry, you need a referral link to join Colonies.");return true; uu.Ref='noref' ;}}
+  }  else{if (isref){ showAlert("Sorry, you need a referral link to join Colonies.");close();return true; uu.Ref='noref' ;}}
      if(uu.Ref.length < 4 && Params.length<3)uu.Ref='noref';
     }catch(x){ /*alert(x);*/
   }

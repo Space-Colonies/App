@@ -458,7 +458,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);if(NoRef){showAlert( "Sorry, you have to use a  referral link to join Colonies. Get it from fiends or search for Colonies channel and get a link from one of the pinned messages.");window.close(); }showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef=typeof NoRef !== "undefined" ? NoRef : false;if(NoRef){showAlert( "Sorry, you have to use a  referral link to join Colonies. Get it from fiends or search for Colonies channel and get a link from one of the pinned messages.");window.close(); }else showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
     uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);

@@ -35,11 +35,12 @@ async function initfunc()
       document.getElementById('nm').innerHTML ="Hi, "+fname;
      
 Telegram.WebApp.ready(); 
-      await lditemsdebug();   
+        
       window.Telegram.WebApp.themeParams.text_color= '#9e9e9e';
       window.Telegram.WebApp.setHeaderColor('#1e1e1e');
+      await lditemsdebug(); 
       //Telegram.WebApp.setBottomBarColor('#2e2e2e');
-      //Telegram.WebApp.setBackgroundColor('#2e2e2e');
+      Telegram.WebApp.setBackgroundColor('#9e9e9e');
           
      Telegram.WebApp.disableVerticalSwipes(); 
      //initData= Telegram.WebApp.initData;    
@@ -448,7 +449,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
   async function cloud(x){uu=u[0];savedebug();}
    //async function cloud(){ alert(await nameOf(()=>u[0].signUpdt) +'  '+  u1.signUpdt); }
   async function  lditemsdebug() {
-    let r=Telegram.WebApp.initDataUnsafe.start_param; if(r.includes("reference"))alert("ref"); else close();
+    let Params = Telegram.WebApp.initDataUnsafe.start_param; if(Params.includes('reference'))alert("ref"); else close();
             let res='';
                     Telegram.WebApp.CloudStorage.getItem("data", await async function(err, value) {
                       let save=false;

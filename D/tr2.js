@@ -449,16 +449,16 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
   async function cloud(x){uu=u[0];savedebug();}
    //async function cloud(){ alert(await nameOf(()=>u[0].signUpdt) +'  '+  u1.signUpdt); }
   async function  lditemsdebug() {
-    let Params = Telegram.WebApp.initDataUnsafe.start_param; if(Params.includes('reference'))alert("ref"); else close();
+    //let rr = Telegram.WebApp.initDataUnsafe.start_param; rr=typeof rr !== "undefined" ? rr : "data";  if(Params.includes('reference'))alert("ref"); 
             let res='';
-                    Telegram.WebApp.CloudStorage.getItem("data", await async function(err, value) {
+                    Telegram.WebApp.CloudStorage.getItem("data2", await async function(err, value) {
                       let save=false;
                             if (err) {
                                 showAlert('Error reading from cloud: ' + err);
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);if(NoRef){showAlert( "Needs refrence");window.close(); }showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);if(NoRef){showAlert( "Sorry, you have to use a  referral link to join Colonies. Get it from fiends or search for Colonies channel and get a link from one of the pinned messages.");window.close(); }showAlert("Welcome! Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
     uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
@@ -500,7 +500,8 @@ async function getQuery(isref=false)
  //Params = new URLSearchParams(window.location.search);
    try{
   let Params = /*"RSsFYFYAM2RSsdZduSRSsFdw4ERan1LVPsiVzndy673e2ed";//*/Telegram.WebApp.initDataUnsafe.start_param;
-  if(Params.includes('dy673e2ed')){Params=Params.replace('dy673e2ed','');  Params=dec(Params);   }
+  Params=typeof Params !== "undefined" ? Params : "Params";
+     if(Params.includes('dy673e2ed')){Params=Params.replace('dy673e2ed','');  Params=dec(Params);   }
     // alert(Params);
      if(Params.includes('ask181890'))
           {
@@ -544,7 +545,7 @@ async function getQuery(isref=false)
       }
   }
                                
-  }  else{if (isref){ showAlert("Sorry, you need a referral link to join Colonies.");return true; uu.Ref='noref' ;}}
+  }  else{if (isref){ /*showAlert("Sorry, you need a referral link to join Colonies.");*/return true; uu.Ref='noref' ;}}
      if(uu.Ref.length < 4 && Params.length<3)uu.Ref='noref';
     }catch(x){ /*alert(x);*/
   }

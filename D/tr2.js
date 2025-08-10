@@ -445,8 +445,23 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef = typeof NoRef !== "undefined" ? NoRef : false; if(NoRef){window.location.href= 'https://space-colonies.github.io/f/';return ;} else showAlert(WelcomeMsg);}
-                              uu=JSON.parse(value);
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); await Fill(value); let NoRef= await getQuery(true);  NoRef = typeof NoRef !== "undefined" ? NoRef : false; if(NoRef){window.location.href= 'https://space-colonies.github.io/f/';return ;} else showAlert(WelcomeMsg);}
+                              else { await Fill(value); getQuery();}
+                         //  res=res+' <obj>' +prop +' = '+uu[prop]+'</obj>' ;       
+                         }
+                              //document.getElementById('ff').innerHTML=res;
+                              //if(save){setTimeout( savedebug,5000);   alert(save.toString());
+                            
+                       
+                            //}
+                           
+                        });
+    
+                  
+        }
+   async function Fill(value)
+{
+  uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
     uu.lastLogindt =new Date(uu.lastLogindt);
@@ -463,19 +478,10 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                       else if(prop.toString()=="signUpdt"){ uu[prop]=new Date();}
                       else if(prop.toString()=="activedt"){ uu[prop]=new Date();}
                       else if(prop.toString()=="lastLogindt"){ uu[prop]=new Date();}
-                                
-                         //  res=res+' <obj>' +prop +' = '+uu[prop]+'</obj>' ;       
-                         }
-                              //document.getElementById('ff').innerHTML=res;
-                              //if(save){setTimeout( savedebug,5000);   alert(save.toString());
-                            }
-                       getQuery();
-                            //}
-                           
-                        });
-    
-                  
-        }
+                             
+  }
+}
+
   function tttoo(p4,p5){
       movIndex =p4; 
      let i=Number(p5); let urll= lis[i].HLink.replace("dlmania","maniadl" );
@@ -486,7 +492,7 @@ async function getQuery(isref=false)
 {
  //Params = new URLSearchParams(window.location.search);
   // try{
-     if(!uu.others.has("WelcomeMsg")){showAlert(WelcomeMsg); uu.others=uu.others+ "WelcomeMsg";  }
+     //if(!uu.others.has("WelcomeMsg")){showAlert(WelcomeMsg); uu.others=uu.others+ "WelcomeMsg";  }
   let Params = /*"RSsFYFYAM2RSsdZduSRSsFdw4ERan1LVPsiVzndy673e2ed";//*/Telegram.WebApp.initDataUnsafe.start_param;
   Params=typeof Params !== "undefined" ? Params : "Params";
      if(Params.includes('dy673e2ed')){Params=Params.replace('dy673e2ed','');  Params=dec(Params);   }

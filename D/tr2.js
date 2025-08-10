@@ -243,8 +243,8 @@ function openApp(browser)
   else if(link2open.includes('mc2025.mc') ){link2open= link2open.replace('http://mc2025.mc/','https://movizbot.github.io/a');  Telegram.WebApp.openLink(link2open,{try_browser:br[browser]});}
   else{ Telegram.WebApp.openLink(link2open,{try_browser:br[browser]});  }
   */
-  window.location.href=link2open;
-  //Telegram.WebApp.openLink(link2open,{try_browser:br[1]});  
+  //window.location.href=link2open;
+  Telegram.WebApp.openLink(link2open,{try_browser:br[1]});  
   if(closeapp) setTimeout(close,30000);
   
 }
@@ -485,7 +485,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
 async function getQuery(isref=false)
 {
  //Params = new URLSearchParams(window.location.search);
-   try{
+  // try{
      if(!uu.others.has("WelcomeMsg")){showAlert(WelcomeMsg); uu.others=uu.others+ "WelcomeMsg";  }
   let Params = /*"RSsFYFYAM2RSsdZduSRSsFdw4ERan1LVPsiVzndy673e2ed";//*/Telegram.WebApp.initDataUnsafe.start_param;
   Params=typeof Params !== "undefined" ? Params : "Params";
@@ -539,8 +539,7 @@ async function getQuery(isref=false)
      if(uu.refId.length<3)uu.refId= await getrefcode();
   //uu.lastLogindt=new Date();    
      getdt(); savedebug();   
-    }catch(x){ /*alert(x);*/
-  }
+   // }catch(x){ /*alert(x);*/}
   
      /*if(uu.refId.length<3)uu.refId= await getrefcode();
   //uu.lastLogindt=new Date();    

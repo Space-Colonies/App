@@ -26,7 +26,7 @@ Array.from(circularProgress).forEach((progressBar) => {
 });
  
 //const tmer =setInterval(txt, 1000);
-
+var WelcomeMsg="Welcome! Join Colonies channel and group to secure your free ticket to the moon. Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad.";
 async function initfunc()
 {
     try{   
@@ -52,7 +52,7 @@ Telegram.WebApp.ready();
          
       document.getElementById('ic').innerHTML =fname[0];
       document.getElementById('nm').innerHTML ="Hi, "+fname;
-     
+     txt();
       setInterval(txt,10000);                                               
        
     }catch(er){showAlert(er);}              
@@ -237,22 +237,14 @@ var link2open,closeapp=false;
 function openApp(browser)
 {  
   let br=[  'default','chrome','firefox','safari','opera' ];
- /* if(link2open.includes('maniadl') )
-  {
-     if(uu.TaskCoins >=300000)
-            {
-             uu.TaskCoins-=200000; 
-           // Telegram.WebApp.openLink(v  ,{try_browser:'chrome'});
-              savedebug();
-            }else{ showAlert("Not enough Task $Spacecoins. Watch ad or carryout some other tasks and try again." ); return;}
-     
-  }
+ /* 
   
   if(browser==0){ Telegram.WebApp.openLink(link2open,{try_instant_view:false});}
   else if(link2open.includes('mc2025.mc') ){link2open= link2open.replace('http://mc2025.mc/','https://movizbot.github.io/a');  Telegram.WebApp.openLink(link2open,{try_browser:br[browser]});}
   else{ Telegram.WebApp.openLink(link2open,{try_browser:br[browser]});  }
   */
-  Telegram.WebApp.openLink(link2open,{try_browser:br[1]});  
+  window.location.href=link2open;
+  //Telegram.WebApp.openLink(link2open,{try_browser:br[1]});  
   if(closeapp) setTimeout(close,30000);
   
 }
@@ -453,8 +445,8 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef=typeof NoRef !== "undefined" ? NoRef : false; if(NoRef){window.location.href= 'https://space-colonies.github.io/f/';} else showAlert("Welcome! Join Colonies channel and group to secure your free ticket to the moon. Try to install Colonies android app and any of my other app  or both to get your welcome bonus of  10,000 $Spacecoins after watching your first ad." ); }   
-    uu=JSON.parse(value);
+                       if(value.length<20){save=true; value= JSON.stringify(u[0]); let NoRef= await getQuery(true);  NoRef = typeof NoRef !== "undefined" ? NoRef : false; if(NoRef){window.location.href= 'https://space-colonies.github.io/f/';return ;} else showAlert(WelcomeMsg);}
+                              uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
     uu.lastLogindt =new Date(uu.lastLogindt);
@@ -494,6 +486,7 @@ async function getQuery(isref=false)
 {
  //Params = new URLSearchParams(window.location.search);
    try{
+     if(!uu.others.has("WelcomeMsg")){showAlert(WelcomeMsg); uu.others=uu.others+ "WelcomeMsg";  }
   let Params = /*"RSsFYFYAM2RSsdZduSRSsFdw4ERan1LVPsiVzndy673e2ed";//*/Telegram.WebApp.initDataUnsafe.start_param;
   Params=typeof Params !== "undefined" ? Params : "Params";
      if(Params.includes('dy673e2ed')){Params=Params.replace('dy673e2ed','');  Params=dec(Params);   }
@@ -541,13 +534,17 @@ async function getQuery(isref=false)
   }
                                
   }  else{if (isref){ /*showAlert("Sorry, you need a referral link to join Colonies.");*/return true; uu.Ref='noref' ;}}
-     if(uu.Ref.length < 4 && Params.length<3)uu.Ref='noref';
-    }catch(x){ /*alert(x);*/
-  }
-  
+     //if(uu.Ref.length < 4 && Params.length<3)uu.Ref='noref';
+     
      if(uu.refId.length<3)uu.refId= await getrefcode();
   //uu.lastLogindt=new Date();    
      getdt(); savedebug();   
+    }catch(x){ /*alert(x);*/
+  }
+  
+     /*if(uu.refId.length<3)uu.refId= await getrefcode();
+  //uu.lastLogindt=new Date();    
+     getdt(); savedebug();   */
 }
 
 
